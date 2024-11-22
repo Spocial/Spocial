@@ -9,7 +9,7 @@ import Home from "./components/Home.jsx";
 import Post from "./components/Post.jsx";
 import RecipeBook from "./components/RecipeBook.jsx";
 function App() {
-    return(
+    return (
         <>
             <Router>
                 <Routes>

@@ -14,8 +14,8 @@ const RecipeBook = () => {
                 <li>
                     {/* Endpoint to route to Post component */}
                     <span className="inria-serif-regular">
-                            <Link to="/Home">Home</Link>
-                        </span>
+                        <Link to="/Home">Home</Link>
+                    </span>
                 </li>
             </ul>
         </div>

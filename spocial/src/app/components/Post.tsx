@@ -14,14 +14,14 @@ const Post = () => {
     }
 
     function addIngredient() {
-        if(newIngredient.trim() != "") { // Prevents user from adding empty textboxes
+        if (newIngredient.trim() != "") { // Prevents user from adding empty textboxes
             setIngredients(ing => [...ing, newIngredient]); // Adds a new ingredient
             setNewIngredient(""); // Resets the textbox
         }
     }
 
     // function deletes ingredient at the given index
-    function deleteIngredient (index) {
+    function deleteIngredient(index) {
         const updatedIngredients = ingredients.filter((_, i) => i !== index); // "_" is a convention to say ignore
         setIngredients(updatedIngredients);
     }
@@ -35,19 +35,19 @@ const Post = () => {
     // }
     return (
         <div>
-             <span className="inria-serif-regular">
+            <span className="inria-serif-regular">
                 <h1>Spocial</h1>
                 <h2>Post a Recipe</h2>
-             </span>
+            </span>
             <div>
                 <input
-                    type =  "text"
-                    placeholder = "Enter an ingredient..."
-                    value = {newIngredient}
-                    onChange = {handleInputChange} />
+                    type="text"
+                    placeholder="Enter an ingredient..."
+                    value={newIngredient}
+                    onChange={handleInputChange} />
                 <button
-                    className = "add-button"
-                    onClick = {addIngredient}>
+                    className="add-button"
+                    onClick={addIngredient}>
                     Add
                 </button>
                 {/* <input onChange = {change}
@@ -58,19 +58,19 @@ const Post = () => {
                     <li>
                         {/* Endpoint to route to Post component */}
                         <span className="inria-serif-regular">
-                                <Link to="/Home">Home</Link>
-                            </span>
+                            <Link to="/Home">Home</Link>
+                        </span>
                     </li>
                 </ul>
             </div>
             <ol>
                 {ingredients.map((ingredient, index) =>
-                    <ul key = {index}>
+                    <ul key={index}>
                         {/* text of each list element */}
-                        <span className = "text">{ingredient}</span>
+                        <span className="text">{ingredient}</span>
                         <button
-                            className = "delete-button"
-                            onClick = {() => deleteIngredient(index)}>
+                            className="delete-button"
+                            onClick={() => deleteIngredient(index)}>
                             Delete
                         </button>
 
