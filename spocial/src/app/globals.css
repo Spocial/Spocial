@@ -27,6 +27,7 @@ code {
   margin-top: 50px;
 }
 h1{ 
+  position: fixed;
   margin-top: 30px;
   align-items: start;
   text-indent: 30px;
@@ -75,33 +76,35 @@ li{
 .vl {
   border-left: 1px solid black;
   height: 1000px;
-  position: absolute;
+  position: fixed;
   left: 220px;
   margin-left: -3px;
   top: 0px;
 }
 .divider {
+  position: fixed;
   border-top: 1px solid black;
   margin-left:218px;
+  margin-top: 100px;
   width: 1500px;
 
 }
 h2{
   position: fixed;
-  margin-top: 30px;
+  margin-top: 130px;
   margin-left: 500px;
   font-size: 1.5rem;
 }
 h3{
   position: fixed;
-  margin-top: 30px;
+  margin-top: 130px;
   margin-left: 1050px;
   font-size: 1.5rem;
 }
 .add-button{
   position: fixed;
   margin-left: 700px;
-  margin-top: 80px;
+  margin-top: 180px;
 }
 .delete-button{
   /* position: absolute; */
@@ -111,12 +114,12 @@ h3{
 .ingredient-input{
   position: fixed;
   margin-left: 450px;
-  margin-top: 80px;
+  margin-top: 180px;
 }
 .step-add-button{
   position: fixed;
   margin-left: 1200px;
-  margin-top: 80px;
+  margin-top: 180px;
 }
 .step-delete-button{
   position: absolute;
@@ -126,23 +129,23 @@ h3{
 .step-input{
   position: fixed;
   margin-left: 950px;
-  margin-top: 80px;
+  margin-top: 180px;
 }
 h4{
   position: fixed;
-  margin-top: 40px;
+  margin-top: 120px;
   margin-left:30px;
   font-size: 1.5rem;
 }
 h5{
   position: fixed;
-  margin-top: 140px;
+  margin-top: 220px;
   margin-left:30px;
   font-size: 1.5rem;
 }
 h6{
   position: fixed;
-  margin-top: 240px;
+  margin-top: 320px;
   margin-left:30px;
   font-size: 1.5rem;
 }
