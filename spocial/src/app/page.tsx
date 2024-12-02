@@ -28,6 +28,12 @@ export default function Home() {
             <Link href="/recipebook"><h6>Recipe Book</h6></Link>
           </span>
         </li>
+          <li>
+              {/* Endpoint to route to Post component */}
+              <span className="inria-serif-regular">
+            <Link href="/signin">Sign In</Link>
+          </span>
+          </li>
       </ul>
       <div className="vl"></div>
     </div>
