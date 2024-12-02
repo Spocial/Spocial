@@ -51,7 +51,7 @@ const Post = () => {
     // }
     return (
         <div>
-            
+
             {/* <div className="header">
                 <h1>Spocial</h1>
             </div> */}
@@ -92,7 +92,7 @@ const Post = () => {
                         Add
                     </span>
                 </button>
-                
+
                 {/* <input onChange = {change}
                 value = {val}/>
                 <button onClick = {click}>add</button> */}
@@ -107,12 +107,12 @@ const Post = () => {
                     <li>
                         {/* Endpoint to route to Post component */}
                         <span className="inria-serif-regular">
-                            <Link href="/"><h5>Post</h5></Link>
+                            <Link href="/post"><h5>Post</h5></Link>
                         </span>
                     </li>
                     <li>
                         <span className="inria-serif-regular">
-                            <Link href="/"><h6>Recipe Book</h6></Link>
+                            <Link href="/recipebook"><h6>Recipe Book</h6></Link>
                         </span>
                     </li>
                 </ul>
@@ -152,7 +152,7 @@ const Post = () => {
             <div className="vl"></div>
 
         </div>
-        
+
     );
 };
 // const Divider = () => {

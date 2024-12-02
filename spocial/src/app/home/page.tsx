@@ -1,9 +1,10 @@
+
 import Link from 'next/link'
 
 export default function Home() {
     return (
         <div>
-            <span className="inria-serif-bold">
+            <span className="inria-serif-regular">
                 <Link href="/">Spocial</Link>
             </span>
             <br />
@@ -11,13 +12,13 @@ export default function Home() {
                 <li>
                     {/* Endpoint to route to Post component */}
                     <span className="inria-serif-regular">
-                        <Link href="/Post">Post</Link>
+                        <Link href="/post">Post</Link>
                     </span>
                 </li>
                 <li>
                     {/* Endpoint to route to RecipeBook component */}
                     <span className="inria-serif-regular">
-                        <Link href="/RecipeBook">RecipeBook</Link>
+                        <Link href="/recipebook">RecipeBook</Link>
                     </span>
                 </li>
             </ul>
