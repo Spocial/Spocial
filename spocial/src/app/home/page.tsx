@@ -3,7 +3,7 @@ import Link from 'next/link'
 export default function Home() {
     return (
         <div>
-            <span className="inria-serif-regular">
+            <span className="inria-serif-bold">
                 <Link href="/">Spocial</Link>
             </span>
             <br />
