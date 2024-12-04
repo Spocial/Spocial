@@ -18,6 +18,10 @@ const Register = () =>{
             'quickstart-verify-email',
         )! as HTMLButtonElement;
 
+        const signUpButton = document.getElementById(
+            'quickstart-sign-up',
+        )! as HTMLButtonElement;
+
         function handleSignUp() {
             const email = emailInput.value;
             const password = passwordInput.value;
@@ -53,26 +57,7 @@ const Register = () =>{
             });
         }
 
-        function sendPasswordReset() {
-            const email = emailInput.value;
-            sendPasswordResetEmail(auth, email)
-                .then(function () {
-                    // Password Reset Email Sent!
-                    alert('Password Reset Email Sent!');
-                })
-                .catch(function (error) {
-                    // Handle Errors here.
-                    const errorCode = error.code;
-                    const errorMessage = error.message;
-                    if (errorCode == 'auth/invalid-email') {
-                        alert(errorMessage);
-                    } else if (errorCode == 'auth/user-not-found') {
-                        alert(errorMessage);
-                    }
-                    console.log(error);
-                });
-        }
-
+        signUpButton.addEventListener('click', handleSignUp, false);
         verifyEmailButton.addEventListener('click', sendVerificationEmailToUser, false);
 
     }, []);

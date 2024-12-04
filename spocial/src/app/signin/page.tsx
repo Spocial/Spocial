@@ -154,15 +154,17 @@ const SignInWithEmailAndPassword = () => {
                     id="quickstart-sign-in"
                     value ="Sign In">
                 </button>
-                <button
-                    id="quickstart-password-reset"
-                    value="Forgot Password?"
-                >
-                </button>
-            </div>
-            <div>
-                <button
-                    id="quickstart-sign-up"
+                <Link href="/">
+                    <button
+                        id="quickstart-password-reset"
+                        value="Forgot Password?"
+                    />
+                </Link>
+
+        </div>
+    <div>
+        <button
+            id="quickstart-sign-up"
                     value="Register Now"
                 />
             </div>
