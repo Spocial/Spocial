@@ -14,11 +14,11 @@
   }
 }
 
-body {
+/* body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
-}
+} */
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -81,6 +81,14 @@ li{
   margin-left: -3px;
   top: 0px;
 }
+.vl2 {
+  border-left: 1px solid black;
+  height: 1000px;
+  position: fixed;
+  left: 620px;
+  margin-left: -3px;
+  top: 0px;
+}
 .divider {
   position: fixed;
   border-top: 1px solid black;
@@ -93,28 +101,46 @@ h2{
   position: fixed;
   margin-top: 130px;
   margin-left: 500px;
+  /* margin-bottom: 1rem; */
   font-size: 1.5rem;
+  margin-bottom: 20px;
 }
 h3{
   position: fixed;
   margin-top: 130px;
   margin-left: 1050px;
   font-size: 1.5rem;
+  margin-bottom: 20px;
+
 }
 .add-button{
   position: fixed;
   margin-left: 700px;
   margin-top: 180px;
+  cursor: "pointer",
 }
 .delete-button{
-  /* position: absolute; */
-  margin-left: 700px;
-  margin-top: 80px;
+  position:static;
+  padding: 10px;
+  background-color: rgb(237, 237, 237);
+  /* color:black; */
+  border: none;
+  border-radius: 8px;
+  margin-left:685px;
+  cursor: "pointer",
+  /* position: fixed; */
+  /* margin-left: 685px;
+  padding: 10px;
+  border-radius: 8px ;
+  border: none; */
+ 
 }
 .ingredient-input{
   position: fixed;
   margin-left: 450px;
   margin-top: 180px;
+  margin-bottom: 20px;
+  /* margin-top: 1 rem; */
 }
 .step-add-button{
   position: fixed;
@@ -148,4 +174,27 @@ h6{
   margin-top: 320px;
   margin-left:30px;
   font-size: 1.5rem;
+}
+ol {
+  margin-top: 1rem; /* Adds space above the ingredient list */
+}
+
+.textIngredient{
+  font-family: "Inria Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-left: 450px;
+  text-align: center;
+  /* margin-left: 500px;
+  justify-Content: space-between;
+  align-items: center;
+  display: flex; */
+  /* padding: 20px; */
+  /* flex-grow: 1; */
+
 }
