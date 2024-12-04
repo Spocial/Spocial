@@ -46,6 +46,21 @@ const Post = () => {
 
     return (
         <div>
+{/* <<<<<<< HEAD
+=======
+            <span className="inria-serif-regular">
+                <h1><Link href="/">Spocial</Link></h1>
+                <div className="divider"></div>
+            </span>
+
+            <span className="inria-serif-regular">
+                <h2>Ingredient List</h2>
+            </span>
+
+            <span className="inria-serif-regular">
+                <h3>Instructions</h3>
+            </span> */}
+
             <div>
                 <span className="inria-serif-regular">
                     <h1>Spocial</h1>
