@@ -1,10 +1,14 @@
+"use client"
+
 import {createUserWithEmailAndPassword,
     getAuth, sendEmailVerification,
     sendPasswordResetEmail} from "firebase/auth";
 import React, {useEffect} from "react";
 import Link from 'next/link'
-import {firebaseConfig} from "@/src/app/signin/config";
+import {firebaseConfig} from "../signin/config";
 import {initializeApp} from "firebase/app";
+import { useNavigate } from "react-router-dom";
+import { withRouter } from "next/router";
 
 const Register = () =>{
     useEffect(()=>{
@@ -34,7 +38,10 @@ const Register = () =>{
                 return;
             }
             // Create user with email and pass.
-            createUserWithEmailAndPassword(auth, email, password).catch(function (error) {
+            createUserWithEmailAndPassword(auth, email, password).then(() => {
+                // @ts-ignore
+                this.props.history.push('/path')
+            }).catch(function (error) {
                 // Handle Errors here.
                 const errorCode = error.code;
                 const errorMessage = error.message;
@@ -58,7 +65,7 @@ const Register = () =>{
         }
 
         signUpButton.addEventListener('click', handleSignUp, false);
-        verifyEmailButton.addEventListener('click', sendVerificationEmailToUser, false);
+        //verifyEmailButton.addEventListener('click', sendVerificationEmailToUser, false);
 
     }, []);
 
@@ -66,7 +73,8 @@ const Register = () =>{
         //change for page
         <div>
             <span className="inria-serif-regular">
-                <h1>Spocial</h1>
+        <h1><Link href="/">Spocial</Link></h1>
+        <div className="divider"></div>
                 <h2>Register</h2>
             </span>
 
@@ -80,8 +88,8 @@ const Register = () =>{
                     type="text"
                     placeholder="Password"/>
                 <button
-                    id="quickstart-sign-in"
-                    value ="Sign Up">
+                    id="quickstart-sign-up"
+                    value ="Sign Up">Sign Up
                 </button>
             </div>
 
@@ -95,6 +103,5 @@ const Register = () =>{
             </ul>
         </div>
     );
-
 }
 export default Register;

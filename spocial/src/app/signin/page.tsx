@@ -12,13 +12,15 @@ import {
 import { firebaseConfig } from './config';
 import React, {useEffect} from "react";
 import Link from "next/link";
-import Register from "./register";
+import Register from "../register/page";
 
 
 const SignInWithEmailAndPassword = () => {
 
     useEffect(()=> {
         initializeApp(firebaseConfig);
+
+
 
         const auth = getAuth();
 
@@ -150,23 +152,26 @@ const SignInWithEmailAndPassword = () => {
                     id="password"
                     type="text"
                     placeholder="Password"/>
+            </div>
+            <div>
                 <button
                     id="quickstart-sign-in"
-                    value ="Sign In">
+                    value="Sign In">
                 </button>
-                <Link href="/">
+                <a href="/">
                     <button
                         id="quickstart-password-reset"
                         value="Forgot Password?"
-                    />
-                </Link>
+                    >Forgot Password?</button>
+                </a>
 
-        </div>
-    <div>
-        <button
-            id="quickstart-sign-up"
-                    value="Register Now"
-                />
+                <a href="/register">
+                    <button
+                        id="quickstart-sign-up"
+                        value="Register Now">
+                        Register Now
+                        </button>
+                </a>
             </div>
 
             <ul style={{listStyle: 'none'}}>
