@@ -1,17 +1,19 @@
 "use client"
 
-import {createUserWithEmailAndPassword,
+import {
+    createUserWithEmailAndPassword,
     getAuth, sendEmailVerification,
-    sendPasswordResetEmail} from "firebase/auth";
-import React, {useEffect} from "react";
+    sendPasswordResetEmail
+} from "firebase/auth";
+import React, { useEffect } from "react";
 import Link from 'next/link'
-import {firebaseConfig} from "../signin/config";
-import {initializeApp} from "firebase/app";
+import { firebaseConfig } from "../signin/config";
+import { initializeApp } from "firebase/app";
 import { useNavigate } from "react-router-dom";
 import { withRouter } from "next/router";
 
-const Register = () =>{
-    useEffect(()=>{
+const Register = () => {
+    useEffect(() => {
         initializeApp(firebaseConfig);
         const auth = getAuth();
 
@@ -69,12 +71,10 @@ const Register = () =>{
 
     }, []);
 
-    return(
+    return (
         //change for page
         <div>
             <span className="inria-serif-regular">
-        <h1><Link href="/">Spocial</Link></h1>
-        <div className="divider"></div>
                 <h2>Register</h2>
             </span>
 
@@ -82,25 +82,48 @@ const Register = () =>{
                 <input
                     id="email"
                     type="text"
-                    placeholder="Email"/>
+                    placeholder="Email" />
                 <input
                     id="password"
                     type="text"
-                    placeholder="Password"/>
+                    placeholder="Password" />
                 <button
                     id="quickstart-sign-up"
-                    value ="Sign Up">Sign Up
+                    value="Sign Up">Sign Up
                 </button>
             </div>
 
-            <ul style={{listStyle: 'none'}}>
+            <span className="inria-serif-regular">
+                <h1><Link href="/">Spocial</Link></h1>
+                <div className="divider"></div>
+            </span>
+            {/* <br /> */}
+            <ul style={{ listStyle: 'none' }}>
                 <li>
                     {/* Endpoint to route to Post component */}
                     <span className="inria-serif-regular">
-                        <Link href="/">Home</Link>
+                        <Link href="/"><h4>Home</h4></Link>
+                    </span>
+                </li>
+                <li>
+                    {/* Endpoint to route to Post component */}
+                    <span className="inria-serif-regular">
+                        <Link href="/post"><h5>Post</h5></Link>
+                    </span>
+                </li>
+                <li>
+                    <span className="inria-serif-regular">
+                        <Link href="/recipebook"><h6>Recipe Book</h6></Link>
+                    </span>
+                </li>
+                <li>
+                    {/* Endpoint to route to Post component */}
+                    <span className="inria-serif-regular">
+                        <Link href="/signin">Sign In</Link>
                     </span>
                 </li>
             </ul>
+            <div className="vl"></div>
         </div>
     );
 }

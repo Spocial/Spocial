@@ -10,7 +10,7 @@ import {
     signOut,
 } from 'firebase/auth';
 import { firebaseConfig } from './config';
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import Register from "../register/page";
 import { getDatabase, ref, child, get } from "firebase/database";
@@ -18,7 +18,7 @@ import { getDatabase, ref, child, get } from "firebase/database";
 
 const SignInWithEmailAndPassword = () => {
 
-    useEffect(()=> {
+    useEffect(() => {
         const app = initializeApp(firebaseConfig);
         const database = getDatabase(app);
 
@@ -104,7 +104,7 @@ const SignInWithEmailAndPassword = () => {
                 });
         }
 
-// Listening for auth state changes.
+        // Listening for auth state changes.
         onAuthStateChanged(auth, function (user) {
             //verifyEmailButton.disabled = true;
             if (user) {
@@ -140,19 +140,17 @@ const SignInWithEmailAndPassword = () => {
         //change for page
         <div>
             <span className="inria-serif-regular">
-                <h1>Spocial</h1>
-                <h2>Sign In</h2>
             </span>
 
             <div>
                 <input
                     id="email"
                     type="text"
-                    placeholder="Email"/>
+                    placeholder="Email" />
                 <input
                     id="password"
                     type="text"
-                    placeholder="Password"/>
+                    placeholder="Password" />
             </div>
             <div>
                 <button
@@ -171,18 +169,40 @@ const SignInWithEmailAndPassword = () => {
                         id="quickstart-sign-up"
                         value="Register Now">
                         Register Now
-                        </button>
+                    </button>
                 </a>
             </div>
-
-            <ul style={{listStyle: 'none'}}>
+            <span className="inria-serif-regular">
+                <h1><Link href="/">Spocial</Link></h1>
+                <div className="divider"></div>
+            </span>
+            {/* <br /> */}
+            <ul style={{ listStyle: 'none' }}>
                 <li>
                     {/* Endpoint to route to Post component */}
                     <span className="inria-serif-regular">
-                        <Link href="/">Home</Link>
+                        <Link href="/"><h4>Home</h4></Link>
+                    </span>
+                </li>
+                <li>
+                    {/* Endpoint to route to Post component */}
+                    <span className="inria-serif-regular">
+                        <Link href="/post"><h5>Post</h5></Link>
+                    </span>
+                </li>
+                <li>
+                    <span className="inria-serif-regular">
+                        <Link href="/recipebook"><h6>Recipe Book</h6></Link>
+                    </span>
+                </li>
+                <li>
+                    {/* Endpoint to route to Post component */}
+                    <span className="inria-serif-regular">
+                        <Link href="/signin">Sign In</Link>
                     </span>
                 </li>
             </ul>
+            <div className="vl"></div>
         </div>
     );
 };
