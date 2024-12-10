@@ -1,7 +1,6 @@
 "use client"
 
 import { initializeApp } from 'firebase/app';
-import { getDatabase } from "firebase/database";
 import {
     connectAuthEmulator,
     getAuth,
@@ -14,17 +13,17 @@ import { firebaseConfig } from './config';
 import React, {useEffect} from "react";
 import Link from "next/link";
 import Register from "../register/page";
+import { getDatabase, ref, child, get } from "firebase/database";
 
 
 const SignInWithEmailAndPassword = () => {
 
     useEffect(()=> {
         const app = initializeApp(firebaseConfig);
-
+        const database = getDatabase(app);
 
 
         const auth = getAuth();
-        const database = getDatabase(app);
 
         /* if (window.location.hostname === 'localhost') {
             connectAuthEmulator(auth, 'http://127.0.0.1:9099');
@@ -160,12 +159,12 @@ const SignInWithEmailAndPassword = () => {
                     id="quickstart-sign-in"
                     value="Sign In">
                 </button>
-                <a href="/">
+                <Link href="/">
                     <button
                         id="quickstart-password-reset"
                         value="Forgot Password?"
                     >Forgot Password?</button>
-                </a>
+                </Link>
 
                 <a href="/register">
                     <button
