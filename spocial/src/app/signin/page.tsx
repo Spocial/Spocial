@@ -1,6 +1,7 @@
 "use client"
 
 import { initializeApp } from 'firebase/app';
+import { getDatabase } from "firebase/database";
 import {
     connectAuthEmulator,
     getAuth,
@@ -18,11 +19,12 @@ import Register from "../register/page";
 const SignInWithEmailAndPassword = () => {
 
     useEffect(()=> {
-        initializeApp(firebaseConfig);
+        const app = initializeApp(firebaseConfig);
 
 
 
         const auth = getAuth();
+        const database = getDatabase(app);
 
         /* if (window.location.hostname === 'localhost') {
             connectAuthEmulator(auth, 'http://127.0.0.1:9099');
