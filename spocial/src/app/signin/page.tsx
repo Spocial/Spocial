@@ -14,6 +14,7 @@ import React, { useEffect } from "react";
 import Link from "next/link";
 import Register from "../register/page";
 import { getDatabase, ref, child, get } from "firebase/database";
+import WriteData from "../write";
 
 
 const SignInWithEmailAndPassword = () => {
@@ -77,6 +78,7 @@ const SignInWithEmailAndPassword = () => {
                     console.log(error);
                     signInButton.disabled = false;
                 });
+                WriteData.accountemail = email;
             }
             signInButton.disabled = true;
         }

@@ -5,12 +5,15 @@ import {Post} from "./post/Post";
 
 interface WriteDataType {
     register: (email: string, password: string) => void;
-    post: (email: string, post: Post) => void;
+    post: (post: Post) => void;
+    accountemail: string;
 }
 
 const WriteData: WriteDataType = (() => {
     const app = initializeApp(firebaseConfig);
     const database = getDatabase(app);
+
+    let accountemail: string = "";
 
     //format for each user:
     /*
@@ -31,23 +34,24 @@ const WriteData: WriteDataType = (() => {
      */
 
     function register(email: string, password: string) {
-        set(ref(database, 'users/' + email), {
+        accountemail = email;
+        set(ref(database, 'users/' + accountemail), {
             password: password,
-            email: email,
+            email: accountemail,
         });
     }
 
-    function post(email: string, post: Post){
+    function post(post: Post){
         //uses email as the index and then post is the contents of the post
         //updating posts not allowed atm
 
-        set(ref(database, 'users/' + email + '/post/'), {
+        set(ref(database, 'users/' + accountemail + '/post/'), {
             ingredients: post._ingredients,
             steps: post._steps
         });
     }
 
-    return {register, post};
+    return {register, post, accountemail};
 })();
 
 export default WriteData;
