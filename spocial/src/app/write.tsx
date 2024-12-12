@@ -3,8 +3,12 @@ import {initializeApp} from "firebase/app";
 import {firebaseConfig} from "./signin/config";
 import {Post} from "./post/Post";
 
+interface WriteDataType {
+    register: (email: string, password: string) => void;
+    post: (email: string, post: Post) => void;
+}
 
-const WriteData = () => {
+const WriteData: WriteDataType = (() => {
     const app = initializeApp(firebaseConfig);
     const database = getDatabase(app);
 
@@ -42,6 +46,8 @@ const WriteData = () => {
             steps: post._steps
         });
     }
-}
+
+    return {register, post};
+})();
 
 export default WriteData;

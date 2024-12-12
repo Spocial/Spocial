@@ -2,8 +2,7 @@
 
 import {
     createUserWithEmailAndPassword,
-    getAuth, sendEmailVerification,
-    sendPasswordResetEmail
+    getAuth
 } from "firebase/auth";
 import React, { useEffect } from "react";
 import Link from 'next/link'
@@ -11,6 +10,9 @@ import { firebaseConfig } from "../signin/config";
 import { initializeApp } from "firebase/app";
 import { useNavigate } from "react-router-dom";
 import { withRouter } from "next/router";
+import WriteData from "../write"
+import {Post} from "@/src/app/post/Post";
+
 
 const Register = () => {
     useEffect(() => {
@@ -20,9 +22,7 @@ const Register = () => {
         const emailInput = document.getElementById('email')! as HTMLInputElement;
         const passwordInput = document.getElementById('password')! as HTMLInputElement;
 
-        const verifyEmailButton = document.getElementById(
-            'quickstart-verify-email',
-        )! as HTMLButtonElement;
+
 
         const signUpButton = document.getElementById(
             'quickstart-sign-up',
@@ -41,7 +41,8 @@ const Register = () => {
             }
             // Create user with email and pass.
             createUserWithEmailAndPassword(auth, email, password).then(() => {
-                // @ts-ignore
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-expect-error
                 this.props.history.push('/path')
             }).catch(function (error) {
                 // Handle Errors here.
@@ -54,17 +55,12 @@ const Register = () => {
                 }
                 console.log(error);
             });
+            WriteData.register(email, password);
         }
 
         /**
          * Sends an email verification to the user.
          */
-        function sendVerificationEmailToUser() {
-            sendEmailVerification(auth.currentUser!).then(function () {
-                // Email Verification sent!
-                alert('Email Verification Sent!');
-            });
-        }
 
         signUpButton.addEventListener('click', handleSignUp, false);
         //verifyEmailButton.addEventListener('click', sendVerificationEmailToUser, false);
