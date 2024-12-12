@@ -141,10 +141,7 @@ const SignInWithEmailAndPassword = () => {
     return (
         //change for page
         <div>
-            <span className="inria-serif-regular">
-            </span>
-
-            <div>
+            <div style={{ position: 'fixed', top: '30px', left: '250px', alignItems: 'center', height: '100vh' }}>
                 <input
                     id="email"
                     type="text"
@@ -154,7 +151,7 @@ const SignInWithEmailAndPassword = () => {
                     type="text"
                     placeholder="Password" />
             </div>
-            <div>
+            <div style={{ position: 'fixed', top: '50px', left: '250px', alignItems: 'center', height: '100vh' }}>
                 <button
                     id="quickstart-sign-in"
                     value="Sign In">
@@ -167,6 +164,7 @@ const SignInWithEmailAndPassword = () => {
                 </Link>
 
                 <a href="/register">
+                    <br></br>
                     <button
                         id="quickstart-sign-up"
                         value="Register Now">

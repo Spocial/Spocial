@@ -231,7 +231,7 @@ const Post = () => {
                             padding: "12px 25px",               // Adjust padding for a larger button
                             backgroundColor: "white",           // White background
                             color: "black",                     // Black text color
-                            border: "1px solid black",          // Black border with 2px thickness
+                            border: "0.5px solid black",          // Black border with 2px thickness
                             borderRadius: "8px",                // Rounded corners
                             cursor: "pointer",                  // Pointer cursor on hover
                             fontSize: "18px",                   // Larger text size

@@ -29,7 +29,7 @@ export default function Home() {
         padding: '0 10px',
       }}>
         {posts.length === 0 ? (
-          <span className="inria-serif-regular">Sorry, kitchen's empty</span>
+          <span className="inria-serif-regular">Sorry, kitchen's empty D:</span>
         ) : (
           posts.map((post, index) => (
             <div key={index} style={{ border: "1px solid #ccc", padding: "10px", margin: "10px" }}>
