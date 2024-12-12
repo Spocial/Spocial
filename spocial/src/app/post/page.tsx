@@ -44,23 +44,20 @@ const Post = () => {
     }
     const maxRows = Math.max(ingredients.length, steps.length);
 
+    const handleAddPost = () => {
+        if (ingredients.length > 0 && steps.length > 0) {
+          // Create a post object or call your backend API to submit
+          console.log("Post Added", { ingredients, steps });
+          // Optionally, reset the form after posting
+          setIngredients([]);
+          setSteps([]);
+        } else {
+          alert("Please add both ingredients and steps before submitting.");
+        }
+      };
+
     return (
         <div>
-{/* <<<<<<< HEAD
-=======
-            <span className="inria-serif-regular">
-                <h1><Link href="/">Spocial</Link></h1>
-                <div className="divider"></div>
-            </span>
-
-            <span className="inria-serif-regular">
-                <h2>Ingredient List</h2>
-            </span>
-
-            <span className="inria-serif-regular">
-                <h3>Instructions</h3>
-            </span> */}
-
             <div>
                 <span className="inria-serif-regular">
                     <h1>Spocial</h1>
@@ -69,24 +66,31 @@ const Post = () => {
             </div>
             <div>
             <ul style={{ listStyle: 'none' }}>
-                        <li>
-                            {/* Endpoint to route to Post component */}
-                            <span className="inria-serif-regular">
-                                <Link href="/"><h4>Home</h4></Link>
-                            </span>
-                        </li>
-                        <li>
-                            {/* Endpoint to route to Post component */}
-                            <span className="inria-serif-regular">
-                                <Link href="/post"><h5>Post</h5></Link>
-                            </span>
-                        </li>
-                        <li>
-                            <span className="inria-serif-regular">
-                                <Link href="/recipebook"><h6>Recipe Book</h6></Link>
-                            </span>
-                        </li>
-                    </ul>
+                <li>
+                    {/* Endpoint to route to Post component */}
+                    <span className="inria-serif-regular">
+                        <Link href="/"><h4>Home</h4></Link>
+                    </span>
+                </li>
+                <li>
+                    {/* Endpoint to route to Post component */}
+                    <span className="inria-serif-regular">
+                        <Link href="/post"><h5>Post</h5></Link>
+                    </span>
+                </li>
+                <li>
+                    <span className="inria-serif-regular">
+                        <Link href="/recipebook"><h6>Recipe Book</h6></Link>
+                    </span>
+                </li>
+                <li>
+                    <span className="inria-serif-regular">
+                        <div className="h7">
+                        <Link href="/signin">Sign In</Link>
+                        </div>
+                    </span>
+                </li>
+                </ul>
             </div>
             <div className="vl"></div>
             <div>
@@ -207,8 +211,25 @@ const Post = () => {
               )}
             </div>
           ))}
-          
         </div>
+        <div style={{ marginTop: "20px", textAlign: "center" }}>
+
+        {/* Add Post */}
+        <button
+          onClick={handleAddPost}
+          style={{
+            padding: "10px 20px",
+            backgroundColor: "#4CAF50",
+            color: "white",
+            border: "none",
+            borderRadius: "5px",
+            cursor: "pointer",
+            fontSize: "16px",
+          }}
+        >
+          Add Post
+        </button>
+      </div>
 
         </div>
             

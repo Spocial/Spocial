@@ -9,7 +9,6 @@ const RecipeBook = () => {
                 <h1><Link href="/">Spocial</Link></h1>
                 <div className="divider"></div>
             </span>
-            <br />
             <ul style={{ listStyle: 'none' }}>
                 <li>
                     {/* Endpoint to route to Post component */}
@@ -26,6 +25,14 @@ const RecipeBook = () => {
                 <li>
                     <span className="inria-serif-regular">
                         <Link href="/recipebook"><h6>Recipe Book</h6></Link>
+                    </span>
+                </li>
+                <li>
+                    {/* Endpoint to route to Post component */}
+                    <span className="inria-serif-regular">
+                        <div className="h7">
+                            <Link href="/signin">Sign In</Link>
+                        </div>
                     </span>
                 </li>
             </ul>

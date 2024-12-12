@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 export class Post {
     private ingredients!: string[];
     private steps!: string[];

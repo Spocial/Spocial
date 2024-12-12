@@ -200,7 +200,9 @@ const SignInWithEmailAndPassword = () => {
                 <li>
                     {/* Endpoint to route to Post component */}
                     <span className="inria-serif-regular">
-                        <Link href="/signin">Sign In</Link>
+                        <div className="h7">
+                            <Link href="/signin">Sign In</Link>
+                        </div>
                     </span>
                 </li>
             </ul>

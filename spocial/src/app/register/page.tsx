@@ -11,7 +11,7 @@ import { initializeApp } from "firebase/app";
 import { useNavigate } from "react-router-dom";
 import { withRouter } from "next/router";
 import WriteData from "../write"
-import {Post} from "@/src/app/post/Post";
+import { Post } from "@/src/app/post/Post";
 
 
 const Register = () => {
@@ -115,7 +115,9 @@ const Register = () => {
                 <li>
                     {/* Endpoint to route to Post component */}
                     <span className="inria-serif-regular">
-                        <Link href="/signin">Sign In</Link>
+                        <div className="h7">
+                            <Link href="/signin">Sign In</Link>
+                        </div>
                     </span>
                 </li>
             </ul>

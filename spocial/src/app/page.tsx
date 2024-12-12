@@ -9,7 +9,11 @@ export default function Home() {
         <h1><Link href="/">Spocial</Link></h1>
         <div className="divider"></div>
       </span>
-      {/* <br /> */}
+      <span className="inria-serif-regular">
+        <div className="Feedtop">
+          Feed
+        </div>
+      </span>
       <ul style={{ listStyle: 'none' }}>
         <li>
           {/* Endpoint to route to Post component */}
@@ -18,7 +22,6 @@ export default function Home() {
           </span>
         </li>
         <li>
-          {/* Endpoint to route to Post component */}
           <span className="inria-serif-regular">
             <Link href="/post"><h5>Post</h5></Link>
           </span>
@@ -28,14 +31,15 @@ export default function Home() {
             <Link href="/recipebook"><h6>Recipe Book</h6></Link>
           </span>
         </li>
-          <li>
-              {/* Endpoint to route to Post component */}
-              <span className="inria-serif-regular">
-            <Link href="/signin">Sign In</Link>
+        <li>
+          <span className="inria-serif-regular">
+            <div className="h7">
+              <Link href="/signin">Sign In</Link>
+            </div>
           </span>
-          </li>
+        </li>
       </ul>
       <div className="vl"></div>
-    </div>
+    </div >
   )
 }

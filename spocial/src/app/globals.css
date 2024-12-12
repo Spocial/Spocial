@@ -175,6 +175,22 @@ h6{
   margin-left:30px;
   font-size: 1.5rem;
 }
+
+.h7{
+    position: fixed;
+    margin-top: 420px;
+    margin-left:30px;
+    font-size: 1.5rem;
+}
+
+.Feedtop{
+  position: fixed;
+  margin-top: 30px;
+  align-items: start;
+  text-indent: 250px;
+  font-size: 3rem;
+}
+
 ol {
   margin-top: 1rem; /* Adds space above the ingredient list */
 }
