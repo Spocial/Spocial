@@ -228,13 +228,18 @@ const Post = () => {
                     <button
                         onClick={handleAddPost}
                         style={{
-                            padding: "10px 20px",
-                            backgroundColor: "#4CAF50",
-                            color: "white",
-                            border: "none",
-                            borderRadius: "5px",
-                            cursor: "pointer",
-                            fontSize: "16px",
+                            padding: "12px 25px",               // Adjust padding for a larger button
+                            backgroundColor: "white",           // White background
+                            color: "black",                     // Black text color
+                            border: "1px solid black",          // Black border with 2px thickness
+                            borderRadius: "8px",                // Rounded corners
+                            cursor: "pointer",                  // Pointer cursor on hover
+                            fontSize: "18px",                   // Larger text size
+                            boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.3)", // Slight shadow for depth
+                            position: "relative",               // Set position for more control
+                            left: "0px",                      // Move the button 250px from the left
+                            top: "30px",                        // Adjust top to move it down a bit
+                            transition: "background-color 0.3s, box-shadow 0.3s", // Smooth transition effect for hover
                         }}
                     >
                         Add Post

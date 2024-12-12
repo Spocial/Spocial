@@ -20,7 +20,7 @@ export default function Home() {
       <div style={{
         position: 'fixed',
         top: '120px',        // Adjust the top margin (distance from the top of the page)
-        left: '24 0px',      // Indent the container 250px from the left
+        left: '240px',      // Indent the container 250px from the left
         width: '70%',       // Set the width of the posts container
         display: 'flex',
         justifyContent: 'center',
@@ -29,7 +29,7 @@ export default function Home() {
         padding: '0 10px',
       }}>
         {posts.length === 0 ? (
-          <p>No posts available.</p>
+          <span className="inria-serif-regular">Sorry, kitchen's empty</span>
         ) : (
           posts.map((post, index) => (
             <div key={index} style={{ border: "1px solid #ccc", padding: "10px", margin: "10px" }}>
